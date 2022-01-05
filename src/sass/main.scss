@@ -1,30 +1,39 @@
 @import "variables";
+@import "mixins";
+body {
+  background-color: rgba(243, 221, 221, 0.2);
+  overscroll-behavior: contain;
+}
 
 .header {
   height: 100vh;
   width: 100vw;
   text-align: center;
   position: relative;
-
-  .headerIMG {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+  background-image: $linear, url(../assets/beachIMG2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .headerLogo {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 60%;
     transform: translate(-50%, -50%);
     border: 1.5px solid black;
     padding: 30px;
     background-color: rgba(250, 243, 243, 0.2);
+    @include desktop {
+      width: 40%;
+    }
 
     .headerLogoText {
       font-family: $main-font;
-      font-size: 20pt;
+      font-size: 12pt;
+      @include phone-up {
+        font-size: 14pt;
+      }
     }
   }
   .headerName {
@@ -32,7 +41,255 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 60px;
+    font-size: 20pt;
     font-family: $main-font;
+    @include phone-up {
+      width: 60%;
+      font-size: 25pt;
+    }
+    @include tablet {
+      font-size: 40pt;
+    }
+  }
+}
+
+.linksToBlogs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+
+  @include tablet-up {
+    margin: 30px;
+  }
+  @include desktop {
+    margin: 50px;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 14pt;
+    font-family: $main-font;
+    @include phone-up {
+      font-size: 20pt;
+    }
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $main-font;
+
+  .newOrOldBlog {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: $main-border;
+    padding: $border-padding;
+    font-size: 12pt;
+    @include phone-up {
+      font-size: 16pt;
+    }
+
+    @include tablet-up {
+      flex-direction: row;
+      margin: 30px;
+    }
+    @include desktop {
+      margin: 50px;
+    }
+  }
+
+  .newB {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+    border: $main-border;
+    padding: $border-padding;
+    width: 200px;
+    height: 250px;
+
+    @include phone-up {
+      width: 300px;
+      height: 300px;
+    }
+    @include tablet {
+      width: 400px;
+      height: 400px;
+    }
+
+    .separate {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .welcomeContainer {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      justify-content: center;
+
+      .welcomeIMG {
+        @include phone-up {
+          width: 90%;
+          height: 100%;
+          background-image: $linear, url(../assets/welcome-beach.jpg);
+
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .oldB {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+    border: $main-border;
+    padding: $border-padding;
+    width: 200px;
+    height: 250px;
+    @include phone-up {
+      width: 300px;
+      height: 300px;
+    }
+    @include tablet {
+      width: 400px;
+      height: 400px;
+    }
+    textarea {
+      height: 100px;
+      @include phone-up {
+        height: 150px;
+      }
+
+      @include tablet {
+        height: 250px;
+      }
+    }
+
+    .separate {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+}
+
+.pictureContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px;
+  @include tablet {
+    gap: 30px;
+  }
+
+  @include desktop {
+    margin: 50px;
+  }
+
+  .images {
+    width: 100px;
+    height: 100px;
+    /*     border: $main-border;
+ */
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include phone-up {
+      height: 200px;
+      width: 170px;
+    }
+    @include tablet {
+      width: 200px;
+      height: 250px;
+    }
+    @include tablet-up {
+      width: 275px;
+      height: 350px;
+    }
+    @include desktop {
+      width: 400px;
+      height: 450px;
+    }
+  }
+
+  .img1 {
+    background-image: $linear, url(../assets/img1.jpg);
+  }
+  .img2 {
+    background-image: $linear, url(../assets/img2.jpg);
+  }
+  .img3 {
+    background-image: $linear, url(../assets/img4.jpg);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(245, 204, 210, 0.4);
+  width: 100vw;
+  height: 150px;
+  padding-top: 30px;
+  font-size: 15px;
+
+  .copyrightContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-family: $main-font;
+  }
+
+  .contactContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contact {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      .contactLink {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 5px;
+        font-family: $main-font;
+      }
+    }
+  }
+
+  .socialMediaContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .socialMedia {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .socialMediaLinks {
+        color: black;
+        text-decoration: none;
+        margin: 5px;
+        cursor: pointer;
+        font-family: $main-font;
+      }
+    }
   }
 }

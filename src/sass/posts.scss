@@ -1,0 +1,100 @@
+@import "variables";
+@import "mixins";
+
+.formContainer {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: rgb(252, 228, 228, 0.5);
+  overflow-x: hidden;
+
+  .heroContainer {
+    background-image: $linear, url(../assets/postIMG.jpg);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.header {
+  .linkContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+    @include tablet-up {
+      margin: 30px;
+    }
+    @include desktop {
+      margin: 50px;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 14pt;
+      font-family: $main-font;
+
+      @include phone-up {
+        font-size: 20pt;
+      }
+    }
+  }
+}
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  font-family: $main-font;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .post {
+    background-color: rgb(214, 179, 179, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 90%;
+
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    @include tablet {
+      width: 300px;
+      margin: 20px;
+    }
+
+    .postHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      padding-top: 10px;
+
+      .headerinfo {
+        margin: 5px;
+      }
+    }
+    .postContent {
+      padding: 10px;
+      margin: 10px;
+      background-color: rgba(175, 146, 146, 0.3);
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+      .postText {
+        // margin-top: 100px;
+      }
+    }
+  }
+}

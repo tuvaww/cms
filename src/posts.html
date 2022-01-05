@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="./sass/posts.scss" />
+    <script type="module" src="./ts/createPost.ts"></script>
+  </head>
+  <body>
+    <div class="heroContainer"></div>
+
+    <section class="header">
+      <article class="linkContainer">
+        <a href="index.html">Home page</a>
+        <a href="">lorem ipsum</a>
+      </article>
+    </section>
+
+    <section class="postsContainer">
+      <article class="post">
+        <div class="postHeader">
+          <span class="headerinfo" id="postAuthor"> Authour: Tuvis</span>
+          <span class="headerinfo" id="postID"> PostID: 123456789</span>
+          <span class="headerinfo" id="postName">Name: olof</span>
+        </div>
+
+        <div class="postContent">
+          <span class="postText"
+            >Lorem ipsum används ofta som exempeltext inom
+            trycksaksframställning och grafisk design för att visa hur till
+            exempel ett dokument kommer att se ut när väl den riktiga texten är
+            på plats</span
+          >
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="postHeader">
+          <span class="headerinfo" id="postAuthor"> Authour: Tuvis</span>
+          <span class="headerinfo" id="postID"> PostID: 123456789</span>
+          <span class="headerinfo" id="postName">Name: olof</span>
+        </div>
+
+        <div class="postContent">
+          <span class="postText"
+            >Lorem ipsum används ofta som exempeltext inom
+            trycksaksframställning och grafisk design för att visa hur till
+            exempel ett dokument kommer att se ut när väl den riktiga texten är
+            på plats</span
+          >
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="postHeader">
+          <span class="headerinfo" id="postAuthor"> Authour: Tuvis</span>
+          <span class="headerinfo" id="postID"> PostID: 123456789</span>
+          <span class="headerinfo" id="postName">Name: olof</span>
+        </div>
+
+        <div class="postContent">
+          <span class="postText"
+            >Lorem ipsum används ofta som exempeltext inom
+            trycksaksframställning och grafisk design för att visa hur till
+            exempel ett dokument kommer att se ut när väl den riktiga texten är
+            på plats</span
+          >
+        </div>
+      </article>
+    </section>
+
+    <section class="formContainer">
+      <form class="newOrOldBlog">
+        <div>
+          <label for="newBlog">New authour</label>
+          <input type="radio" id="newBlog" name="blogger" value="newBlogger" />
+        </div>
+        <div>
+          <label for="oldBlog">Already have a acount</label>
+          <input type="radio" id="oldBlog" name="blogger" value="oldBlogger" />
+        </div>
+      </form>
+
+      <form class="newB">
+        <div class="separate">
+          <label for="name">Write your name:</label>
+          <input id="name" type="text" placeholder="Write your name" />
+        </div>
+        <div class="separate">
+          <label for="authour">Who's the author:</label>
+          <input id="authour" type="text" placeholder="Write authour" />
+        </div>
+        <div class="separate">
+          <input id="createNewBlog" value="Create" />
+        </div>
+        <div class="welcomeContainer">
+          <div class="welcomeIMG"></div>
+        </div>
+      </form>
+
+      <form class="oldB">
+        <div class="separate">
+          <label for="wichAuthor">Choose author:</label>
+          <select name="authors" id="wichAuthor"></select>
+        </div>
+        <div class="separate">
+          <label for="titel">Titel:</label>
+          <input id="titel" type="text" placeholder="Titel:" />
+        </div>
+        <div class="separate">
+          <label for="post">Post:</label>
+          <textarea
+            name="post"
+            id="post"
+            placeholder="Write your post"
+          ></textarea>
+        </div>
+        <div class="separate">
+          <input id="createPost" value="Create" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
