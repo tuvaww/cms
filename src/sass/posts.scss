@@ -25,6 +25,46 @@ body {
   }
 }
 
+.authoursContainer {
+  display: inline;
+  width: 20%;
+  position: fixed;
+  margin: 10px;
+  z-index: 1;
+  font-family: $main-font;
+
+  .blogs {
+    cursor: pointer;
+    &:hover {
+      font-size: 16pt;
+    }
+  }
+
+  .hideIcons {
+    display: none;
+  }
+
+  .menuA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(238, 201, 207, 0.575);
+    border: pink 1px solid;
+    cursor: pointer;
+
+    .menuIcon {
+      width: 25px;
+      height: 1px;
+      background-color: black;
+    }
+  }
+}
+
 .header {
   .linkContainer {
     display: flex;
@@ -43,13 +83,114 @@ body {
       font-size: 14pt;
       font-family: $main-font;
 
+      &:hover {
+        border-bottom: solid black 1px;
+      }
+
       @include phone-up {
         font-size: 20pt;
       }
     }
   }
 }
+
 .postsContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  /*   @include desktop {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 100px;
+  } */
+  .contentContainer {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: rgba(228, 187, 194, 0.2);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    @include tablet {
+      width: 80%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+    .headerContent {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      font-family: $main-font;
+      text-align: center;
+      font-size: 18pt;
+      text-align: left;
+      // border-bottom: $bottom-border;
+
+      .storeHeader {
+        text-align: left;
+      }
+    }
+    .textContainer {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-family: $main-font;
+
+      .titel {
+        font-size: 18pt;
+      }
+      // border-bottom: $bottom-border;
+    }
+  }
+
+  .postIMG {
+    width: 225px;
+    height: 250px;
+    position: relative;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #img1Container {
+    background-image: $linear, url(../assets/venice.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -35%;
+    top: -40%;
+    @include tablet {
+      left: -40%;
+    }
+
+    @include tablet-up {
+      left: -45%;
+    }
+  }
+
+  #img2Container {
+    background-image: $linear, url(../assets/view.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: -65%;
+    @include tablet {
+      right: -75%;
+      top: -20%;
+    }
+    @include tablet-up {
+      right: -80%;
+    }
+  }
+}
+
+/* .postsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,3 +239,4 @@ body {
     }
   }
 }
+ */

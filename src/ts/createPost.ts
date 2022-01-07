@@ -1,7 +1,11 @@
 import { listOfUserPosts } from "./main";
 
 window.onload = function () {
-  createPost();
+  //createPost();
+  hideMenu();
+  // showAuthours();
+  clickMenu();
+  //showMenu();
 };
 
 /* 
@@ -23,7 +27,7 @@ window.onload = function () {
 </div>
 </article> */
 
-function createPost() {
+/* function createPost() {
   for (let i = 0; i < listOfUserPosts.length; i++) {
     let containerPosts: HTMLElement = document.getElementsByClassName(
       "postsContainer"
@@ -66,4 +70,111 @@ function createPost() {
     post.appendChild(postContent);
     containerPosts.appendChild(post);
   }
+} */
+
+function hideMenu() {
+  let authourNames: HTMLElement = document.getElementsByClassName(
+    "authourNames"
+  )[0] as HTMLElement;
+  authourNames.style.display = "none";
+
+  let pIcon: HTMLElement = document.getElementsByClassName(
+    "bi-person-x-fill"
+  )[0] as HTMLElement;
+  pIcon.style.display = "none";
 }
+
+function clickMenu() {
+  let menu: HTMLElement = document.getElementsByClassName(
+    "menuA"
+  )[0] as HTMLElement;
+
+  menu.addEventListener("click", () => {
+    let authourNames: HTMLElement = document.getElementsByClassName(
+      "authourNames"
+    )[0] as HTMLElement;
+    authourNames.style.display = "";
+    let pIcon: HTMLElement = document.getElementsByClassName(
+      "bi-person-x-fill"
+    )[0] as HTMLElement;
+    pIcon.style.display = "";
+
+    /* menu.classList.add("clicked");
+    menu.classList.add("clickedMenu"); */
+
+    /* let icon: HTMLElement = document.createElement("i");
+    icon.classList.add("bi");
+    icon.classList.add("bi-person-x-fill");
+
+    menu.appendChild(icon); */
+
+    let menuIcons = document.getElementsByClassName("menuIcon");
+    for (let i = 0; i < menuIcons.length; i++) {
+      menuIcons[i].classList.add("hideIcons");
+    }
+  });
+}
+
+function showMenu() {
+  let personIcon: HTMLElement = document.getElementsByClassName(
+    "bi-person-x-fill"
+  )[0] as HTMLElement;
+  personIcon.addEventListener("click", () => {
+    hideMenu();
+
+    let menuIcons = document.getElementsByClassName("menuIcon");
+    for (let i = 0; i < menuIcons.length; i++) {
+      menuIcons[i].classList.remove("hideIcons");
+    }
+    let pIcon: HTMLElement = document.getElementsByClassName(
+      "bi-person-x-fill"
+    )[0] as HTMLElement;
+    pIcon.style.display = "none";
+  });
+}
+
+/* function showAuthours() {
+  let menu: HTMLElement = document.getElementsByClassName(
+    "menuA"
+  )[0] as HTMLElement;
+
+  menu.addEventListener("click", () => {
+    let authourNames: HTMLElement = document.getElementsByClassName(
+      "authourNames"
+    )[0] as HTMLElement;
+    authourNames.style.display = "";
+    menu.classList.add("clicked");
+    menu.classList.add("clickedMenu");
+
+    let icon: HTMLElement = document.createElement("i");
+    icon.classList.add("bi");
+    icon.classList.add("bi-person-x-fill");
+    icon.id = "removeThis";
+
+    menu.appendChild(icon);
+
+    let menuIcons = document.getElementsByClassName("menuIcon");
+    for (let i = 0; i < menuIcons.length; i++) {
+      menuIcons[i].classList.add("hideIcons");
+    }
+    hideAuthours();
+  });
+}
+
+function hideAuthours() {
+  let clicked: HTMLElement = document.getElementsByClassName(
+    "clicked"
+  )[0] as HTMLElement;
+  clicked.addEventListener("click", () => {
+    clicked.classList.remove("clickedMenu");
+
+    hideMenu();
+    let picons = document.getElementById("removeThis");
+    picons.style.display = "none";
+
+    let removeClass = document.getElementsByClassName("menuIcon");
+    for (let i = 0; i < removeClass.length; i++) {
+      removeClass[i].classList.remove("hideIcons");
+    }
+  });
+} */
